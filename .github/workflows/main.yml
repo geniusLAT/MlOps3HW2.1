@@ -23,9 +23,17 @@ jobs:
         
       - name: Install DVC S3
         run: pip install dvc-s3
+
+      - name: Configure DVC Remote
+        run: |
+           dvc remote add -d myremote gdrive://root/MLOps_3_dvc
            
-      # - name: DVC Pull Data
-      #   run: dvc pull  # Скачиваем все зависимости
+      - name: Configure DVC Remote
+        run: |
+           dvc remote modify myremote gdrive_client_id 'client_id'
+           
+      - name: DVC Pull Data
+        run: dvc pull  # Скачиваем все зависимости
 
       - name: Run DVC Pipeline
         run: dvc repro  # Запускаем пайплайн
