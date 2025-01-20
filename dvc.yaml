@@ -1,6 +1,6 @@
 stages:
   preprocess_data:
-    cmd: python data_preprocessing.py data data
+    cmd: python data_preprocessing.py
     deps:
     - data/cars_raw.csv
     - data_preprocessing.py
