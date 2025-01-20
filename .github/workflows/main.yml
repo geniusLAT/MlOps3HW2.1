@@ -24,8 +24,8 @@ jobs:
       - name: Install DVC S3
         run: pip install dvc-s3
            
-      - name: DVC Pull Data
-        run: dvc pull  # Скачиваем все зависимости
+      # - name: DVC Pull Data
+      #   run: dvc pull  # Скачиваем все зависимости
 
       - name: Run DVC Pipeline
         run: dvc repro  # Запускаем пайплайн
